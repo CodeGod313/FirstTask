@@ -4,7 +4,7 @@ import edu.epam.firsttask.entity.CustomArray;
 import edu.epam.firsttask.exception.EmptyArrayException;
 import edu.epam.firsttask.service.AverageService;
 
-public class AverageServiceImplementation implements AverageService {
+public class AverageServiceImpl implements AverageService {
     @Override
     public Double getAverage(CustomArray customArray) throws EmptyArrayException {
         if(customArray.isEmpty())

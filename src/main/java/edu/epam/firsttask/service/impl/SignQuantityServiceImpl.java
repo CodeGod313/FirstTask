@@ -4,7 +4,7 @@ import edu.epam.firsttask.entity.CustomArray;
 import edu.epam.firsttask.exception.EmptyArrayException;
 import edu.epam.firsttask.service.SignQuantityService;
 
-public class SignQuantityServiceImplementation implements SignQuantityService {
+public class SignQuantityServiceImpl implements SignQuantityService {
     @Override
     public int getPositivesQuantity(CustomArray customArray) throws EmptyArrayException {
         if(customArray.isEmpty())

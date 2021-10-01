@@ -4,7 +4,7 @@ import edu.epam.firsttask.entity.CustomArray;
 import edu.epam.firsttask.exception.EmptyArrayException;
 import edu.epam.firsttask.service.ExtremumService;
 
-public class ExtremumServiceImplementation implements ExtremumService {
+public class ExtremumServiceImpl implements ExtremumService {
     @Override
     public Double getMin(CustomArray customArray) throws EmptyArrayException {
         if(customArray.isEmpty())

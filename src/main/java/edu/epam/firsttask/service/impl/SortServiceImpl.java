@@ -4,7 +4,7 @@ import edu.epam.firsttask.entity.CustomArray;
 import edu.epam.firsttask.exception.EmptyArrayException;
 import edu.epam.firsttask.service.SortService;
 
-public class SortServiceImplementation implements SortService {
+public class SortServiceImpl implements SortService {
     @Override
     public void quickSort(CustomArray customArray, int leftBorder, int rightBorder) throws EmptyArrayException {
         if(customArray.isEmpty())

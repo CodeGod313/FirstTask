@@ -4,7 +4,7 @@ import edu.epam.firsttask.entity.CustomArray;
 import edu.epam.firsttask.exception.EmptyArrayException;
 import edu.epam.firsttask.service.SumService;
 
-public class SumServiceImplementation implements SumService {
+public class SumServiceImpl implements SumService {
     @Override
     public Double getSum(CustomArray customArray) throws EmptyArrayException {
         if(customArray.isEmpty())

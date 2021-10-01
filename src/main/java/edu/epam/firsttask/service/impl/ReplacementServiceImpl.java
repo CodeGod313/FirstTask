@@ -5,7 +5,7 @@ import edu.epam.firsttask.exception.EmptyArrayException;
 import edu.epam.firsttask.functional.Comparable;
 import edu.epam.firsttask.service.ReplacementService;
 
-public class ReplacementServiceImplementation implements ReplacementService {
+public class ReplacementServiceImpl implements ReplacementService {
     @Override
     public void replaceTo(CustomArray customArray, Comparable comparable, Double number) throws EmptyArrayException {
         if(customArray.isEmpty())
