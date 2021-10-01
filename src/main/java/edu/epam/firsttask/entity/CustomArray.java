@@ -51,4 +51,11 @@ public class CustomArray {
     public int hashCode() {
         return Arrays.hashCode(doubleArray);
     }
+
+    @Override
+    public String toString() {
+        return "CustomArray{" +
+                "doubleArray=" + Arrays.toString(doubleArray) +
+                '}';
+    }
 }
