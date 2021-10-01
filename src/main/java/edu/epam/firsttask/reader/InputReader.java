@@ -1,4 +1,4 @@
-package reader;
+package edu.epam.firsttask.reader;
 
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;

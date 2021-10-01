@@ -1,4 +1,4 @@
-package entity;
+package edu.epam.firsttask.entity;
 
 import java.util.List;
 
@@ -23,5 +23,9 @@ public class CustomArray {
 
     public int size() {
         return doubleArray.length;
+    }
+
+    public boolean isEmpty(){
+        return doubleArray.length == 0;
     }
 }
