@@ -21,7 +21,7 @@ public class InputReaderImplTest extends TestCase {
 
     @Test
     public void testReadStringsFromFile() {
-        Path path = Paths.get("input/testData.txt");
+        Path path = Paths.get("src/test/resources/input/testData.txt");
         List<String> expected = List.of("123 456 kkkk","ddd b");
         List<String> actual = inputReader.readStringsFromFile(path);
         Assert.assertEquals(expected, actual);
