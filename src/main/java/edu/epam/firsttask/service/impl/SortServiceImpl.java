@@ -2,9 +2,13 @@ package edu.epam.firsttask.service.impl;
 
 import edu.epam.firsttask.entity.CustomArray;
 import edu.epam.firsttask.exception.EmptyArrayException;
+import edu.epam.firsttask.factory.impl.CustomArrayFactoryImpl;
 import edu.epam.firsttask.service.SortService;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 public class SortServiceImpl implements SortService {
+    static Logger logger = LogManager.getLogger(SortServiceImpl.class);
     @Override
     public void quickSort(CustomArray customArray, int leftBorder, int rightBorder) throws EmptyArrayException {
         if(customArray.isEmpty())

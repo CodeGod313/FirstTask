@@ -2,9 +2,13 @@ package edu.epam.firsttask.service.impl;
 
 import edu.epam.firsttask.entity.CustomArray;
 import edu.epam.firsttask.exception.EmptyArrayException;
+import edu.epam.firsttask.factory.impl.CustomArrayFactoryImpl;
 import edu.epam.firsttask.service.AverageService;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 public class AverageServiceImpl implements AverageService {
+    static Logger logger = LogManager.getLogger(AverageServiceImpl.class);
     @Override
     public Double getAverage(CustomArray customArray) throws EmptyArrayException {
         if(customArray.isEmpty())

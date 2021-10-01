@@ -2,9 +2,13 @@ package edu.epam.firsttask.service.impl;
 
 import edu.epam.firsttask.entity.CustomArray;
 import edu.epam.firsttask.exception.EmptyArrayException;
+import edu.epam.firsttask.factory.impl.CustomArrayFactoryImpl;
 import edu.epam.firsttask.service.SumService;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 public class SumServiceImpl implements SumService {
+    static Logger logger = LogManager.getLogger(SumServiceImpl.class);
     @Override
     public Double getSum(CustomArray customArray) throws EmptyArrayException {
         if(customArray.isEmpty())
