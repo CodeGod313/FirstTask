@@ -1,8 +1,7 @@
-package edu.epam.firsttask.service.impl;
+package edu.epam.firsttask.service.impl.common;
 
 import edu.epam.firsttask.entity.CustomArray;
 import edu.epam.firsttask.exception.EmptyArrayException;
-import edu.epam.firsttask.factory.impl.CustomArrayFactoryImpl;
 import edu.epam.firsttask.service.SortService;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
