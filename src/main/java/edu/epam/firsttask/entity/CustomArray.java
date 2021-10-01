@@ -16,7 +16,7 @@ public class CustomArray {
     }
 
     public Double[] getDoubleArray() {
-        return doubleArray;
+        return Arrays.copyOf(doubleArray, doubleArray.length);
     }
 
     public void setDoubleArray(Double[] doubleArray) {
