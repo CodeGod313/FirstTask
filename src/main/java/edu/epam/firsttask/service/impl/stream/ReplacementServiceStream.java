@@ -22,7 +22,8 @@ public class ReplacementServiceStream implements ReplacementService {
                         return number;
                     }
                     return x;
-                }).toArray(Double[]::new);
+                })
+                .toArray(Double[]::new);
         customArray.setDoubleArray(doubles);
     }
 }
