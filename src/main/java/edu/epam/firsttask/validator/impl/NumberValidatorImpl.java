@@ -1,6 +1,5 @@
 package edu.epam.firsttask.validator.impl;
 
-import edu.epam.firsttask.factory.impl.CustomArrayFactoryImpl;
 import edu.epam.firsttask.validator.NumberValidator;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;

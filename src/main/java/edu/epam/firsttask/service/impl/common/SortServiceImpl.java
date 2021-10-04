@@ -15,27 +15,22 @@ public class SortServiceImpl implements SortService {
         if(rightBorder <= leftBorder){
             return;
         }
-        int j = partition(customArray, leftBorder, rightBorder);
-        quickSort(customArray, leftBorder, j-1);
-        quickSort(customArray, j+1, rightBorder);
-
-    }
-
-    private int partition(CustomArray customArray, int left, int right){
-        int i = left;
-        int j = right + 1;
-        while (true){
-            while (customArray.getByIndex(++i) < customArray.getByIndex(left)){
-                if(i == right) break;
+        int i = leftBorder;
+        int j = rightBorder;
+        Double pivot = customArray.getByIndex((i+j)/2);
+        while (i <= j) {
+            while (customArray.getByIndex(i) < pivot)
+                i++;
+            while (customArray.getByIndex(j) > pivot)
+                j--;
+            if (i <= j) {
+                swap(customArray,i++,j--);
             }
-            while (customArray.getByIndex(--j) > customArray.getByIndex(left)){
-                if(j == left) break;
-            }
-            if(i >= j) break;
-            swap(customArray,i,j);
         }
-        swap(customArray,left,j);
-        return j;
+        if (j > leftBorder)
+            quickSort(customArray, leftBorder, j);
+        if (i < rightBorder)
+            quickSort(customArray, i, rightBorder);
     }
 
     @Override
@@ -60,8 +55,8 @@ public class SortServiceImpl implements SortService {
             throw new EmptyArrayException("Can not sort, array is empty");
         for (int i = 0; i < customArray.size(); i++) {
             int minInd = i;
-            for (int j = i; j < customArray.size(); j++) {
-                if (customArray.getByIndex(minInd) > customArray.getByIndex(i)) {
+            for (int j = i + 1; j < customArray.size(); j++) {
+                if (customArray.getByIndex(minInd) > customArray.getByIndex(j)) {
                     minInd = j;
                 }
             }
