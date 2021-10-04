@@ -1,8 +1,9 @@
-package edu.epam.firsttask.service.impl.common;
+package edu.epam.firsttask.service.impl.stream;
 
 import edu.epam.firsttask.entity.CustomArray;
 import edu.epam.firsttask.exception.EmptyArrayException;
 import edu.epam.firsttask.service.ReplacementService;
+import edu.epam.firsttask.service.impl.common.ReplacementServiceImpl;
 import junit.framework.TestCase;
 import org.junit.Assert;
 import org.junit.Before;
@@ -10,13 +11,13 @@ import org.junit.Test;
 
 import java.util.List;
 
-public class ReplacementServiceImplTest extends TestCase {
+public class ReplacementServiceStreamTest extends TestCase {
 
     ReplacementService replacementService;
 
     @Before
     public void setUp(){
-        replacementService = new ReplacementServiceImpl();
+        replacementService = new ReplacementServiceStream();
     }
 
     @Test
