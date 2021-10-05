@@ -14,34 +14,23 @@ import java.util.Arrays;
 
 public class ExtremumServiceStreamTest extends TestCase {
 
-    static Logger logger = LogManager.getLogger(ExtremumServiceImplTest.class);
     ExtremumService extremumService = new ExtremumServiceStream();
 
     @Test
-    public void testGetMin() {
+    public void testGetMin() throws EmptyArrayException {
         Double[] values = {555.5, 777.7};
         CustomArray customArray = new CustomArray(Arrays.asList(values));
         Double expected = 555.5;
-        Double actual = null;
-        try {
-            actual = extremumService.getMin(customArray);
-        } catch (EmptyArrayException e) {
-            logger.error("Array is empty", e);
-        }
+        Double actual = extremumService.getMin(customArray);
         Assert.assertEquals(expected, actual);
     }
 
     @Test
-    public void testGetMax() {
+    public void testGetMax() throws EmptyArrayException {
         Double[] values = {555.5, 777.7};
         CustomArray customArray = new CustomArray(Arrays.asList(values));
         Double expected = 777.7;
-        Double actual = null;
-        try {
-            actual = extremumService.getMax(customArray);
-        } catch (EmptyArrayException e) {
-            logger.error("Array is empty", e);
-        }
+        Double actual = extremumService.getMax(customArray);
         Assert.assertEquals(expected, actual);
     }
 }

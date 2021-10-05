@@ -21,30 +21,20 @@ public class SignQuantityServiceStreamTest extends TestCase {
     }
 
     @Test
-    public void testGetPositivesQuantity() {
+    public void testGetPositivesQuantity() throws EmptyArrayException {
         List<Double> doubleList = List.of(-1.,0.,2.,1.,3.);
         CustomArray customArray = new CustomArray(doubleList);
         Integer expected = 3;
-        Integer actual = null;
-        try {
-            actual = signQuantityService.getPositivesQuantity(customArray);
-        } catch (EmptyArrayException e) {
-            //ignore
-        }
+        Integer actual = signQuantityService.getPositivesQuantity(customArray);
         Assert.assertEquals(expected, actual);
     }
 
     @Test
-    public void testGetNegativesQuantity() {
+    public void testGetNegativesQuantity() throws EmptyArrayException {
         List<Double> doubleList = List.of(-1.,0.,2.,1.,3.);
         CustomArray customArray = new CustomArray(doubleList);
         Integer expected = 1;
-        Integer actual = null;
-        try {
-            actual = signQuantityService.getNegativesQuantity(customArray);
-        } catch (EmptyArrayException e) {
-            //ignore
-        }
+        Integer actual = signQuantityService.getNegativesQuantity(customArray);
         Assert.assertEquals(expected, actual);
     }
 }
