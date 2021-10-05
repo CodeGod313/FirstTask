@@ -1,15 +1,15 @@
-package edu.epam.firsttask.factory.impl;
+package edu.epam.firsttask.parser.impl;
 
 
-import edu.epam.firsttask.factory.StringFactory;
+import edu.epam.firsttask.parser.StringParser;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
 import java.util.Arrays;
 import java.util.List;
 
-public class StringFactoryImpl implements StringFactory {
-    static Logger logger = LogManager.getLogger(StringFactoryImpl.class);
+public class StringParserImpl implements StringParser {
+    static Logger logger = LogManager.getLogger(StringParserImpl.class);
     public static final String REGEX_DELIMITER = "\\s+";
     @Override
     public List<String> separate(String line) {

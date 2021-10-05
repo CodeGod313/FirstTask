@@ -1,6 +1,7 @@
 package edu.epam.firsttask.factory.impl;
 
-import edu.epam.firsttask.factory.StringFactory;
+import edu.epam.firsttask.parser.StringParser;
+import edu.epam.firsttask.parser.impl.StringParserImpl;
 import junit.framework.TestCase;
 import org.junit.Assert;
 import org.junit.Before;
@@ -8,20 +9,20 @@ import org.junit.Test;
 
 import java.util.List;
 
-public class StringFactoryImplTest extends TestCase {
+public class StringParserImplTest extends TestCase {
 
-    StringFactory stringFactory;
+    StringParser stringParser;
 
     @Before
     public void setUp(){
-        stringFactory = new StringFactoryImpl();
+        stringParser = new StringParserImpl();
     }
 
     @Test
     public void testSeparate() {
         String line = "55555 d 732    b  0";
         List<String> expected = List.of("55555", "d", "732", "b", "0");
-        List<String> actual = stringFactory.separate(line);
+        List<String> actual = stringParser.separate(line);
         Assert.assertEquals(expected, actual);
     }
 }
