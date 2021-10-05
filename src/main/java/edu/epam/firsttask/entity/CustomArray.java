@@ -25,7 +25,7 @@ public class CustomArray {
     }
 
     public void setDoubleArray(Double[] doubleArray) {
-        this.doubleArray = doubleArray;
+        this.doubleArray = doubleArray.clone();
     }
 
     public Double getByIndex(int index){
