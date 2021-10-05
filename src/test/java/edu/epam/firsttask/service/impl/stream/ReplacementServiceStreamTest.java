@@ -11,7 +11,7 @@ import org.junit.Test;
 
 import java.util.List;
 
-public class ReplacementServiceStreamTest extends TestCase {
+public class ReplacementServiceStreamTest {
 
     ReplacementService replacementService;
 

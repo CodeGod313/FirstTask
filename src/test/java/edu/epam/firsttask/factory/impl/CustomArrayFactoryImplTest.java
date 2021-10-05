@@ -10,7 +10,7 @@ import org.junit.Test;
 import java.util.Arrays;
 import java.util.List;
 
-public class CustomArrayFactoryImplTest extends TestCase {
+public class CustomArrayFactoryImplTest {
 
     CustomArrayFactory customArrayFactory;
 

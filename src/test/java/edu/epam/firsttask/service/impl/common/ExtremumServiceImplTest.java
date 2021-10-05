@@ -12,7 +12,7 @@ import org.junit.Test;
 
 import java.util.Arrays;
 
-public class ExtremumServiceImplTest extends TestCase {
+public class ExtremumServiceImplTest  {
 
     static Logger logger = LogManager.getLogger(ExtremumServiceImplTest.class);
 

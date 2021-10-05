@@ -8,7 +8,7 @@ import org.junit.Test;
 
 import java.util.List;
 
-public class SortServiceStreamTest extends TestCase {
+public class SortServiceStreamTest {
 
     SortServiceStream sortService;
 

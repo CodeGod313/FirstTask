@@ -11,7 +11,7 @@ import org.junit.Test;
 
 import java.util.List;
 
-public class SignQuantityServiceStreamTest extends TestCase {
+public class SignQuantityServiceStreamTest {
 
     SignQuantityService signQuantityService;
 

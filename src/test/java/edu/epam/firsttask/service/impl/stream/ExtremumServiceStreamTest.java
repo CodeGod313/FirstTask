@@ -12,7 +12,7 @@ import org.junit.Test;
 
 import java.util.Arrays;
 
-public class ExtremumServiceStreamTest extends TestCase {
+public class ExtremumServiceStreamTest {
 
     ExtremumService extremumService = new ExtremumServiceStream();
 

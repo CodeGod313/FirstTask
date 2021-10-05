@@ -13,7 +13,7 @@ import org.junit.Test;
 
 import java.util.Arrays;
 
-public class AverageServiceStreamTest extends TestCase {
+public class AverageServiceStreamTest {
 
     AverageService averageService;
 

@@ -10,7 +10,7 @@ import org.junit.Test;
 
 import java.util.List;
 
-public class SumServiceStreamTest extends TestCase {
+public class SumServiceStreamTest {
 
     SumService sumService;
 

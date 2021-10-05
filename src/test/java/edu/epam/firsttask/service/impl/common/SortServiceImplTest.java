@@ -10,7 +10,7 @@ import org.junit.Test;
 
 import java.util.List;
 
-public class SortServiceImplTest extends TestCase {
+public class SortServiceImplTest {
 
     SortService sortService;
 

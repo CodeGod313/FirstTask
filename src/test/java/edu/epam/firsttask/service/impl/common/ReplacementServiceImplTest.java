@@ -10,7 +10,7 @@ import org.junit.Test;
 
 import java.util.List;
 
-public class ReplacementServiceImplTest extends TestCase {
+public class ReplacementServiceImplTest {
 
     ReplacementService replacementService;
 

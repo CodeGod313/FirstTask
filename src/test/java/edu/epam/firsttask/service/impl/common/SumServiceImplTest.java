@@ -9,7 +9,7 @@ import org.junit.Test;
 
 import java.util.List;
 
-public class SumServiceImplTest extends TestCase {
+public class SumServiceImplTest {
 
     SumService sumService;
 

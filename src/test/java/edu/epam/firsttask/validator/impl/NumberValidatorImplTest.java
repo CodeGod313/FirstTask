@@ -6,7 +6,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-public class NumberValidatorImplTest extends TestCase {
+public class NumberValidatorImplTest {
 
     NumberValidator numberValidator;
 

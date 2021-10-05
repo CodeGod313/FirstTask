@@ -9,7 +9,7 @@ import org.junit.Test;
 import java.net.PasswordAuthentication;
 import java.util.List;
 
-public class StringFilterImplTest extends TestCase {
+public class StringFilterImplTest {
 
     StringFilter stringFilter;
 

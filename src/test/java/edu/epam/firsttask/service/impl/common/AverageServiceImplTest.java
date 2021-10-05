@@ -12,7 +12,7 @@ import org.junit.Test;
 
 import java.util.Arrays;
 
-public class AverageServiceImplTest extends TestCase {
+public class AverageServiceImplTest {
 
     static Logger logger = LogManager.getLogger(AverageServiceImplTest.class);
 
