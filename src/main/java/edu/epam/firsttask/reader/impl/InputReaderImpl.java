@@ -17,7 +17,7 @@ public class InputReaderImpl implements InputReader {
         try (Stream<String> lines = Files.lines(filePath)) {
             return lines.toList();
         } catch (IOException ex) {
-            logger.error("Error While Reading File", ex);
+            logger.error("Error While Reading File" + filePath, ex);
         }
         return null;
     }
