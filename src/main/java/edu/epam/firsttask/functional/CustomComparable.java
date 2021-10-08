@@ -1,5 +1,5 @@
 package edu.epam.firsttask.functional;
 
-public interface Comparable {
+public interface CustomComparable {
     boolean compareDouble(Double number);
 }
