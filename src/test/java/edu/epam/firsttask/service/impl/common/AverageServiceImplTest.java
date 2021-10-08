@@ -14,8 +14,6 @@ import java.util.Arrays;
 
 public class AverageServiceImplTest {
 
-    static Logger logger = LogManager.getLogger(AverageServiceImplTest.class);
-
     AverageService averageService;
 
     @Before
@@ -24,16 +22,11 @@ public class AverageServiceImplTest {
     }
 
     @Test
-    public void testGetAverage() {
+    public void testGetAverage() throws EmptyArrayException {
         Double[] values = {777.7, 555.5};
         CustomArray customArray = new CustomArray(Arrays.asList(values));
         Double expected = 666.6;
-        Double actual = null;
-        try {
-            actual = averageService.getAverage(customArray);
-        } catch (EmptyArrayException e) {
-            logger.error("Array is empty", e);
-        }
+        Double actual = averageService.getAverage(customArray);
         Assert.assertEquals(expected,actual);
     }
 }
