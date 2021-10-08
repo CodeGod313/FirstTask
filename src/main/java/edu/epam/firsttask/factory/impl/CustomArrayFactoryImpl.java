@@ -16,7 +16,6 @@ public class CustomArrayFactoryImpl implements CustomArrayFactory {
         List<Double> doubleList =  strings.stream()
                 .map(Double::parseDouble)
                 .toList();
-        logger.info("");
         return new CustomArray(doubleList);
     }
 }
