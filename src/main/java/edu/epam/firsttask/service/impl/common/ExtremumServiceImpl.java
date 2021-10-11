@@ -1,37 +1,41 @@
 package edu.epam.firsttask.service.impl.common;
 
 import edu.epam.firsttask.entity.CustomArray;
-import edu.epam.firsttask.exception.EmptyArrayException;
+import edu.epam.firsttask.exception.InvalidArrayIndexException;
 import edu.epam.firsttask.service.ExtremumService;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+
+import java.util.OptionalDouble;
 
 public class ExtremumServiceImpl implements ExtremumService {
     static Logger logger = LogManager.getLogger(AverageServiceImpl.class);
 
     @Override
-    public Double calculateMin(CustomArray customArray) throws EmptyArrayException {
-        if (customArray.isEmpty())
-            throw new EmptyArrayException("Can not get the minimum, array is empty");
+    public OptionalDouble calculateMin(CustomArray customArray) throws InvalidArrayIndexException {
+        if(customArray.size() == 0){
+            return OptionalDouble.empty();
+        }
         Double min = customArray.getByIndex(0);
         for (int i = 0; i < customArray.size(); i++) {
             if (customArray.getByIndex(i) < min) {
                 min = customArray.getByIndex(i);
             }
         }
-        return min;
+        return OptionalDouble.of(min);
     }
 
     @Override
-    public Double calculateMax(CustomArray customArray) throws EmptyArrayException {
-        if (customArray.isEmpty())
-            throw new EmptyArrayException("Can not get the maximum, array is empty");
+    public OptionalDouble calculateMax(CustomArray customArray) throws InvalidArrayIndexException {
+        if(customArray.size() == 0){
+            return OptionalDouble.empty();
+        }
         Double max = customArray.getByIndex(0);
         for (int i = 0; i < customArray.size(); i++) {
             if (customArray.getByIndex(i) > max) {
                 max = customArray.getByIndex(i);
             }
         }
-        return max;
+        return OptionalDouble.of(max);
     }
 }

@@ -1,9 +1,11 @@
 package edu.epam.firsttask.service;
 
 import edu.epam.firsttask.entity.CustomArray;
-import edu.epam.firsttask.exception.EmptyArrayException;
+import edu.epam.firsttask.exception.InvalidArrayIndexException;
+
+import java.util.OptionalDouble;
 
 public interface ExtremumService {
-    Double calculateMin(CustomArray customArray) throws EmptyArrayException;
-    Double calculateMax(CustomArray customArray) throws EmptyArrayException;
+    OptionalDouble calculateMin(CustomArray customArray) throws InvalidArrayIndexException;
+    OptionalDouble calculateMax(CustomArray customArray) throws InvalidArrayIndexException;
 }

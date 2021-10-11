@@ -1,5 +1,6 @@
 package edu.epam.firsttask.reader.impl;
 
+import edu.epam.firsttask.exception.WrongFilePathException;
 import edu.epam.firsttask.reader.InputReader;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -14,12 +15,12 @@ public class InputReaderImpl implements InputReader {
     static Logger logger = LogManager.getLogger(InputReaderImpl.class);
 
     @Override
-    public List<String> readStringsFromFile(Path filePath) {
+    public List<String> readStringsFromFile(Path filePath) throws WrongFilePathException {
         try (Stream<String> lines = Files.lines(filePath)) {
             return lines.toList();
-        } catch (final IOException ex) {
-            logger.error("Error While Reading File" + filePath, ex);
-            throw new RuntimeException(ex);
+        } catch (IOException ex) {
+            logger.error("Wrong file path " + filePath, ex);
+            throw new WrongFilePathException(filePath.toString(), ex);
         }
     }
 }

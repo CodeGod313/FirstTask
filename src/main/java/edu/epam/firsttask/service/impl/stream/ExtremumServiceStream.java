@@ -1,29 +1,24 @@
 package edu.epam.firsttask.service.impl.stream;
 
 import edu.epam.firsttask.entity.CustomArray;
-import edu.epam.firsttask.exception.EmptyArrayException;
+import edu.epam.firsttask.exception.InvalidArrayIndexException;
 import edu.epam.firsttask.service.ExtremumService;
 
 import java.util.Arrays;
+import java.util.OptionalDouble;
 
 public class ExtremumServiceStream implements ExtremumService {
     @Override
-    public Double calculateMin(CustomArray customArray) throws EmptyArrayException {
-        if (customArray.isEmpty())
-            throw new EmptyArrayException("Can not count minimum, array is empty");
+    public OptionalDouble calculateMin(CustomArray customArray) {
         return Arrays.stream(customArray.getDoubleArray())
                 .mapToDouble(x -> x)
-                .min()
-                .getAsDouble();
+                .min();
     }
 
     @Override
-    public Double calculateMax(CustomArray customArray) throws EmptyArrayException {
-        if (customArray.isEmpty())
-            throw new EmptyArrayException("Can not count maximum, array is empty");
+    public OptionalDouble calculateMax(CustomArray customArray) {
         return Arrays.stream(customArray.getDoubleArray())
                 .mapToDouble(x -> x)
-                .max()
-                .getAsDouble();
+                .max();
     }
 }

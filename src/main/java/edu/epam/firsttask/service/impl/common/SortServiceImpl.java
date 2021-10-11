@@ -1,7 +1,7 @@
 package edu.epam.firsttask.service.impl.common;
 
 import edu.epam.firsttask.entity.CustomArray;
-import edu.epam.firsttask.exception.EmptyArrayException;
+import edu.epam.firsttask.exception.InvalidArrayIndexException;
 import edu.epam.firsttask.service.SortService;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -10,10 +10,9 @@ public class SortServiceImpl implements SortService {
     static Logger logger = LogManager.getLogger(SortServiceImpl.class);
 
     @Override
-    public void quickSort(CustomArray customArray, int leftBorder, int rightBorder) throws EmptyArrayException {
-        if (customArray.isEmpty())
-            throw new EmptyArrayException("Can not sort, array is empty");
+    public void quickSort(CustomArray customArray, int leftBorder, int rightBorder) throws InvalidArrayIndexException {
         if (rightBorder <= leftBorder) {
+            System.out.println("sukas");
             return;
         }
         int i = leftBorder;
@@ -35,9 +34,7 @@ public class SortServiceImpl implements SortService {
     }
 
     @Override
-    public void bubbleSort(CustomArray customArray) throws EmptyArrayException {
-        if (customArray.isEmpty())
-            throw new EmptyArrayException("Can not sort, array is empty");
+    public void bubbleSort(CustomArray customArray) throws InvalidArrayIndexException {
         boolean runSort = true;
         while (runSort) {
             runSort = false;
@@ -51,9 +48,7 @@ public class SortServiceImpl implements SortService {
     }
 
     @Override
-    public void selectionSort(CustomArray customArray) throws EmptyArrayException {
-        if (customArray.isEmpty())
-            throw new EmptyArrayException("Can not sort, array is empty");
+    public void selectionSort(CustomArray customArray) throws InvalidArrayIndexException {
         for (int i = 0; i < customArray.size(); i++) {
             int minInd = i;
             for (int j = i + 1; j < customArray.size(); j++) {
@@ -65,7 +60,7 @@ public class SortServiceImpl implements SortService {
         }
     }
 
-    private void swap(CustomArray customArray, int index1, int index2) {
+    private void swap(CustomArray customArray, int index1, int index2) throws InvalidArrayIndexException {
         Double tmp = customArray.getByIndex(index1);
         customArray.setByIndex(index1, customArray.getByIndex(index2));
         customArray.setByIndex(index2, tmp);

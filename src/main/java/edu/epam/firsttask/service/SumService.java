@@ -1,8 +1,8 @@
 package edu.epam.firsttask.service;
 
 import edu.epam.firsttask.entity.CustomArray;
-import edu.epam.firsttask.exception.EmptyArrayException;
+import edu.epam.firsttask.exception.InvalidArrayIndexException;
 
 public interface SumService {
-    Double calculateSum(CustomArray customArray) throws EmptyArrayException;
+    Double calculateSum(CustomArray customArray) throws InvalidArrayIndexException;
 }

@@ -1,5 +1,6 @@
 package edu.epam.firsttask.entity;
 
+import edu.epam.firsttask.exception.InvalidArrayIndexException;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
@@ -13,11 +14,14 @@ public class CustomArray {
 
     public CustomArray(List<Double> doubleList) {
         if (doubleList == null) {
-            this.doubleArray = null;
+            this.doubleArray = new Double[0];
         } else {
             this.doubleArray = doubleList.toArray(Double[]::new);
         }
+    }
 
+    public CustomArray(Double[] doubleArray) {
+        this.doubleArray = doubleArray.clone();
     }
 
     public Double[] getDoubleArray() {
@@ -28,20 +32,22 @@ public class CustomArray {
         this.doubleArray = doubleArray.clone();
     }
 
-    public Double getByIndex(int index) {
+    public Double getByIndex(int index) throws InvalidArrayIndexException {
+        if (index > size() - 1 || index < 0) {
+            throw new InvalidArrayIndexException("Invalid index");
+        }
         return doubleArray[index];
     }
 
-    public void setByIndex(int index, Double number) {
+    public void setByIndex(int index, Double number) throws InvalidArrayIndexException {
+        if (index > size() - 1 || index < 0) {
+            throw new InvalidArrayIndexException("Invalid index");
+        }
         doubleArray[index] = number;
     }
 
     public int size() {
         return doubleArray.length;
-    }
-
-    public boolean isEmpty() {
-        return doubleArray == null || doubleArray.length == 0;
     }
 
     @Override
