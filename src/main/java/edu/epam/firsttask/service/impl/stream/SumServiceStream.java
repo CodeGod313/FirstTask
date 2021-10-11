@@ -1,7 +1,6 @@
 package edu.epam.firsttask.service.impl.stream;
 
 import edu.epam.firsttask.entity.CustomArray;
-import edu.epam.firsttask.exception.InvalidArrayIndexException;
 import edu.epam.firsttask.service.SumService;
 
 import java.util.Arrays;

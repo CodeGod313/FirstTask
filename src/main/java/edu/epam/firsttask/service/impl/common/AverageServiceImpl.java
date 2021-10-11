@@ -6,7 +6,6 @@ import edu.epam.firsttask.service.AverageService;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
-import java.util.Optional;
 import java.util.OptionalDouble;
 
 public class AverageServiceImpl implements AverageService {

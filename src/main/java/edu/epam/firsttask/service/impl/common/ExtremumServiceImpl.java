@@ -13,7 +13,7 @@ public class ExtremumServiceImpl implements ExtremumService {
 
     @Override
     public OptionalDouble calculateMin(CustomArray customArray) throws InvalidArrayIndexException {
-        if(customArray.size() == 0){
+        if (customArray.size() == 0) {
             return OptionalDouble.empty();
         }
         Double min = customArray.getByIndex(0);
@@ -27,7 +27,7 @@ public class ExtremumServiceImpl implements ExtremumService {
 
     @Override
     public OptionalDouble calculateMax(CustomArray customArray) throws InvalidArrayIndexException {
-        if(customArray.size() == 0){
+        if (customArray.size() == 0) {
             return OptionalDouble.empty();
         }
         Double max = customArray.getByIndex(0);
