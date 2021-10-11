@@ -1,17 +1,18 @@
 package edu.epam.firsttask.validator.impl;
 
 import edu.epam.firsttask.validator.NumberValidator;
-import junit.framework.TestCase;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class NumberValidatorImplTest {
 
     NumberValidator numberValidator;
 
-    @Before
-    public void setUp(){
+    @BeforeAll
+    public void setUp() {
         numberValidator = new NumberValidatorImpl();
     }
 
@@ -20,6 +21,6 @@ public class NumberValidatorImplTest {
         String numberString = "555.777";
         boolean expected = true;
         boolean actual = numberValidator.isNumber(numberString);
-        Assert.assertEquals(expected, actual);
+        Assertions.assertEquals(expected, actual);
     }
 }

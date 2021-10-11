@@ -3,17 +3,19 @@ package edu.epam.firsttask.service.impl.common;
 import edu.epam.firsttask.entity.CustomArray;
 import edu.epam.firsttask.exception.InvalidArrayIndexException;
 import edu.epam.firsttask.service.AverageService;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 
 import java.util.Arrays;
 
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class AverageServiceImplTest {
 
     AverageService averageService;
 
-    @Before
+    @BeforeAll
     public void setUp() {
         averageService = new AverageServiceImpl();
     }
@@ -25,6 +27,6 @@ public class AverageServiceImplTest {
         Double expected = 666.6;
         Double actual = averageService.calculateAverage(customArray)
                 .getAsDouble();
-        Assert.assertEquals(expected, actual);
+        Assertions.assertEquals(expected, actual);
     }
 }

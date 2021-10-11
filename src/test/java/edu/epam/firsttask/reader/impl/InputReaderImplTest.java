@@ -2,35 +2,37 @@ package edu.epam.firsttask.reader.impl;
 
 import edu.epam.firsttask.exception.WrongFilePathException;
 import edu.epam.firsttask.reader.InputReader;
-import junit.framework.TestCase;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
-
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class InputReaderImplTest {
 
     InputReader inputReader;
 
-    @Before
-    public void setUp(){
+    @BeforeAll
+    public void setUp() {
         inputReader = new InputReaderImpl();
     }
 
     @Test
     public void testReadStringsFromFile() throws WrongFilePathException {
         Path path = Paths.get("src/test/resources/input/testData.txt");
-        List<String> expected = List.of("123 456 kkkk","ddd b");
+        List<String> expected = List.of("123 456 kkkk", "ddd b");
         List<String> actual = inputReader.readStringsFromFile(path);
-        Assert.assertEquals(expected, actual);
+        Assertions.assertEquals(expected, actual);
     }
 
-    @Test(expected = WrongFilePathException.class)
-    public void testReadStingsFromFileWrongPathException() throws WrongFilePathException {
+    @Test
+    public void testReadStingsFromFileWrongPathException() {
         Path path = Paths.get("hello world---");
-        inputReader.readStringsFromFile(path);
+        Assertions.assertThrows(WrongFilePathException.class, () -> {
+            inputReader.readStringsFromFile(path);
+        });
     }
 }
