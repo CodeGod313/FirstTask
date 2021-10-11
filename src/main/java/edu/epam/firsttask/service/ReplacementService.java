@@ -2,8 +2,9 @@ package edu.epam.firsttask.service;
 
 import edu.epam.firsttask.entity.CustomArray;
 import edu.epam.firsttask.exception.InvalidArrayIndexException;
-import edu.epam.firsttask.functional.CustomComparable;
+
+import java.util.function.DoublePredicate;
 
 public interface ReplacementService {
-    void replaceTo(CustomArray customArray, CustomComparable customComparable, Double number) throws InvalidArrayIndexException;
+    void replaceTo(CustomArray customArray, DoublePredicate doublePredicate, Double number) throws InvalidArrayIndexException;
 }
