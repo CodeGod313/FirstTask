@@ -3,7 +3,6 @@ package edu.epam.firsttask.service.impl.common;
 import edu.epam.firsttask.entity.CustomArray;
 import edu.epam.firsttask.exception.EmptyArrayException;
 import edu.epam.firsttask.service.SumService;
-import junit.framework.TestCase;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -23,7 +22,7 @@ public class SumServiceImplTest {
     public void testGetSum() throws EmptyArrayException {
         CustomArray customArray = new CustomArray(List.of(5.55,6.,7.,8.));
         Double expected = 26.55;
-        Double actual = sumService.getSum(customArray);
+        Double actual = sumService.calculateSum(customArray);
         Assert.assertEquals(expected,actual);
     }
 }

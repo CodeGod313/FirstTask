@@ -8,13 +8,14 @@ import org.apache.log4j.Logger;
 
 public class SignQuantityServiceImpl implements SignQuantityService {
     static Logger logger = LogManager.getLogger(SignQuantityServiceImpl.class);
+
     @Override
-    public Integer getPositivesQuantity(CustomArray customArray) throws EmptyArrayException {
-        if(customArray.isEmpty())
+    public Integer calculatePositivesQuantity(CustomArray customArray) throws EmptyArrayException {
+        if (customArray.isEmpty())
             throw new EmptyArrayException("Can not count the quantity, array is empty");
         int quantity = 0;
-        for(int i = 0; i<customArray.size(); i++){
-            if(customArray.getByIndex(i) > 0){
+        for (int i = 0; i < customArray.size(); i++) {
+            if (customArray.getByIndex(i) > 0) {
                 quantity++;
             }
         }
@@ -22,12 +23,12 @@ public class SignQuantityServiceImpl implements SignQuantityService {
     }
 
     @Override
-    public Integer getNegativesQuantity(CustomArray customArray) throws EmptyArrayException {
-        if(customArray.isEmpty())
+    public Integer calculateNegativesQuantity(CustomArray customArray) throws EmptyArrayException {
+        if (customArray.isEmpty())
             throw new EmptyArrayException("Can not count the quantity, array is empty");
         int quantity = 0;
-        for(int i = 0; i<customArray.size(); i++){
-            if(customArray.getByIndex(i) < 0){
+        for (int i = 0; i < customArray.size(); i++) {
+            if (customArray.getByIndex(i) < 0) {
                 quantity++;
             }
         }

@@ -10,12 +10,13 @@ import java.util.Arrays;
 
 public class AverageServiceStream implements AverageService {
     static Logger logger = LogManager.getLogger(AverageServiceStream.class);
+
     @Override
-    public Double getAverage(CustomArray customArray) throws EmptyArrayException {
-        if(customArray.isEmpty())
+    public Double calculateAverage(CustomArray customArray) throws EmptyArrayException {
+        if (customArray.isEmpty())
             throw new EmptyArrayException("Can not count the average, array is empty");
         return Arrays.stream(customArray.getDoubleArray())
-                .mapToDouble(x->x)
+                .mapToDouble(x -> x)
                 .average()
                 .getAsDouble();
     }

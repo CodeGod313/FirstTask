@@ -1,6 +1,6 @@
 package edu.epam.firsttask.exception;
 
-public class EmptyArrayException extends Exception{
+public class EmptyArrayException extends Exception {
     public EmptyArrayException() {
     }
 

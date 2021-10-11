@@ -8,12 +8,13 @@ import org.apache.log4j.Logger;
 
 public class SumServiceImpl implements SumService {
     static Logger logger = LogManager.getLogger(SumServiceImpl.class);
+
     @Override
-    public Double getSum(CustomArray customArray) throws EmptyArrayException {
-        if(customArray.isEmpty())
+    public Double calculateSum(CustomArray customArray) throws EmptyArrayException {
+        if (customArray.isEmpty())
             throw new EmptyArrayException("Can not count the sum, array is empty");
         Double sum = 0.;
-        for(int i = 0; i<customArray.size(); i++){
+        for (int i = 0; i < customArray.size(); i++) {
             sum += customArray.getByIndex(i);
         }
         return sum;

@@ -11,8 +11,9 @@ import java.util.List;
 public class StringParserImpl implements StringParser {
     static Logger logger = LogManager.getLogger(StringParserImpl.class);
     public static final String REGEX_DELIMITER = "\\s+";
+
     @Override
-    public List<String> separate(String line) {
+    public List<String> separateLine(String line) {
         line = line.trim();
         return Arrays.stream(line.split(REGEX_DELIMITER))
                 .toList();

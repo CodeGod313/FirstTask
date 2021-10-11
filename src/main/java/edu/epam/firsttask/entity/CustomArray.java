@@ -12,9 +12,9 @@ public class CustomArray {
     private Double[] doubleArray;
 
     public CustomArray(List<Double> doubleList) {
-        if(doubleList == null){
+        if (doubleList == null) {
             this.doubleArray = null;
-        }else {
+        } else {
             this.doubleArray = doubleList.toArray(Double[]::new);
         }
 
@@ -28,7 +28,7 @@ public class CustomArray {
         this.doubleArray = doubleArray.clone();
     }
 
-    public Double getByIndex(int index){
+    public Double getByIndex(int index) {
         return doubleArray[index];
     }
 
@@ -40,7 +40,7 @@ public class CustomArray {
         return doubleArray.length;
     }
 
-    public boolean isEmpty(){
+    public boolean isEmpty() {
         return doubleArray == null || doubleArray.length == 0;
     }
 

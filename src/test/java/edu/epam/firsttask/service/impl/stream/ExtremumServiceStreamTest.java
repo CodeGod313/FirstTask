@@ -3,10 +3,6 @@ package edu.epam.firsttask.service.impl.stream;
 import edu.epam.firsttask.entity.CustomArray;
 import edu.epam.firsttask.exception.EmptyArrayException;
 import edu.epam.firsttask.service.ExtremumService;
-import edu.epam.firsttask.service.impl.common.ExtremumServiceImplTest;
-import junit.framework.TestCase;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -21,7 +17,7 @@ public class ExtremumServiceStreamTest {
         Double[] values = {555.5, 777.7};
         CustomArray customArray = new CustomArray(Arrays.asList(values));
         Double expected = 555.5;
-        Double actual = extremumService.getMin(customArray);
+        Double actual = extremumService.calculateMin(customArray);
         Assert.assertEquals(expected, actual);
     }
 
@@ -30,7 +26,7 @@ public class ExtremumServiceStreamTest {
         Double[] values = {555.5, 777.7};
         CustomArray customArray = new CustomArray(Arrays.asList(values));
         Double expected = 777.7;
-        Double actual = extremumService.getMax(customArray);
+        Double actual = extremumService.calculateMax(customArray);
         Assert.assertEquals(expected, actual);
     }
 }

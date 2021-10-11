@@ -10,17 +10,18 @@ import java.util.Arrays;
 
 public class SignQuantityServiceStream implements SignQuantityService {
     static Logger logger = LogManager.getLogger(SignQuantityServiceStream.class);
+
     @Override
-    public Integer getPositivesQuantity(CustomArray customArray) throws EmptyArrayException {
+    public Integer calculatePositivesQuantity(CustomArray customArray) throws EmptyArrayException {
         return (int) Arrays.stream(customArray.getDoubleArray())
-                .filter(x->x>0)
+                .filter(x -> x > 0)
                 .count();
     }
 
     @Override
-    public Integer getNegativesQuantity(CustomArray customArray) throws EmptyArrayException {
+    public Integer calculateNegativesQuantity(CustomArray customArray) throws EmptyArrayException {
         return (int) Arrays.stream(customArray.getDoubleArray())
-                .filter(x->x<0)
+                .filter(x -> x < 0)
                 .count();
     }
 }

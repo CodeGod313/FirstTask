@@ -5,6 +5,6 @@ import edu.epam.firsttask.exception.EmptyArrayException;
 
 
 public interface SignQuantityService {
-    Integer getPositivesQuantity(CustomArray customArray) throws EmptyArrayException;
-    Integer getNegativesQuantity(CustomArray customArray) throws EmptyArrayException;
+    Integer calculatePositivesQuantity(CustomArray customArray) throws EmptyArrayException;
+    Integer calculateNegativesQuantity(CustomArray customArray) throws EmptyArrayException;
 }

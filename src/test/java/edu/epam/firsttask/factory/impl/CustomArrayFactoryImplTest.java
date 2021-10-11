@@ -2,7 +2,6 @@ package edu.epam.firsttask.factory.impl;
 
 import edu.epam.firsttask.entity.CustomArray;
 import edu.epam.firsttask.factory.CustomArrayFactory;
-import junit.framework.TestCase;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -25,7 +24,7 @@ public class CustomArrayFactoryImplTest {
         Double[] expectedInList = {555.,777.7};
         List<Double> doubleList = Arrays.asList(expectedInList);
         CustomArray expected = new CustomArray(doubleList);
-        CustomArray actual = customArrayFactory.getCustomArrayFromStrings(stringList);
+        CustomArray actual = customArrayFactory.createCustomArrayFromStrings(stringList);
         Assert.assertEquals(expected, actual);
     }
 }

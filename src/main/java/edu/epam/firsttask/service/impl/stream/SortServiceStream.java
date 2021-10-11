@@ -1,7 +1,6 @@
 package edu.epam.firsttask.service.impl.stream;
 
 import edu.epam.firsttask.entity.CustomArray;
-import edu.epam.firsttask.service.SortService;
 
 import java.util.Arrays;
 

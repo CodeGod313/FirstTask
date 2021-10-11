@@ -12,8 +12,9 @@ import java.util.stream.Stream;
 
 public class InputReaderImpl implements InputReader {
     static Logger logger = LogManager.getLogger(InputReaderImpl.class);
+
     @Override
-    public List<String> readStringsFromFile(Path filePath){
+    public List<String> readStringsFromFile(Path filePath) {
         try (Stream<String> lines = Files.lines(filePath)) {
             return lines.toList();
         } catch (final IOException ex) {

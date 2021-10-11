@@ -8,13 +8,14 @@ import org.apache.log4j.Logger;
 
 public class ExtremumServiceImpl implements ExtremumService {
     static Logger logger = LogManager.getLogger(AverageServiceImpl.class);
+
     @Override
-    public Double getMin(CustomArray customArray) throws EmptyArrayException {
-        if(customArray.isEmpty())
+    public Double calculateMin(CustomArray customArray) throws EmptyArrayException {
+        if (customArray.isEmpty())
             throw new EmptyArrayException("Can not get the minimum, array is empty");
         Double min = customArray.getByIndex(0);
-        for(int i = 0; i<customArray.size(); i++){
-            if(customArray.getByIndex(i) < min){
+        for (int i = 0; i < customArray.size(); i++) {
+            if (customArray.getByIndex(i) < min) {
                 min = customArray.getByIndex(i);
             }
         }
@@ -22,12 +23,12 @@ public class ExtremumServiceImpl implements ExtremumService {
     }
 
     @Override
-    public Double getMax(CustomArray customArray) throws EmptyArrayException {
-        if(customArray.isEmpty())
+    public Double calculateMax(CustomArray customArray) throws EmptyArrayException {
+        if (customArray.isEmpty())
             throw new EmptyArrayException("Can not get the maximum, array is empty");
         Double max = customArray.getByIndex(0);
-        for(int i = 0; i<customArray.size(); i++){
-            if(customArray.getByIndex(i) > max){
+        for (int i = 0; i < customArray.size(); i++) {
+            if (customArray.getByIndex(i) > max) {
                 max = customArray.getByIndex(i);
             }
         }
