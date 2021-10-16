@@ -12,7 +12,7 @@ public class SortServiceImpl implements SortService {
     @Override
     public void quickSort(CustomArray customArray, int leftBorder, int rightBorder) throws InvalidArrayIndexException {
         if (rightBorder <= leftBorder) {
-            System.out.println("sukas");
+            logger.error("Wrong sort range");
             return;
         }
         int i = leftBorder;
