@@ -13,7 +13,7 @@ public class SortServiceImpl implements SortService {
     public void quickSort(CustomArray customArray, int leftBorder, int rightBorder) throws InvalidArrayIndexException {
         if (rightBorder <= leftBorder) {
             logger.error("Wrong sort range");
-            return;
+            throw new InvalidArrayIndexException("Wrong indexes for sort");
         }
         int i = leftBorder;
         int j = rightBorder;
